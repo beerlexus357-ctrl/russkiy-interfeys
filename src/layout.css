@@ -1,0 +1,194 @@
+.app {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.25rem 0 3rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0;
+}
+
+.brand-mark {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #dff7f0, var(--accent-strong));
+  box-shadow: 0 0 18px var(--glow);
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.nav-link {
+  border: 0;
+  background: transparent;
+  color: var(--ink-muted);
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 180ms ease, background 180ms ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--ink);
+  background: rgba(232, 244, 240, 0.06);
+}
+
+.hero {
+  min-height: calc(100vh - 8rem);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.brand-hero {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  background: linear-gradient(120deg, #f4fffb 10%, #8fcfc0 70%, #4f9d8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 14ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.55rem, 3.2vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 1rem 0 0;
+  max-width: 34ch;
+  color: var(--ink-muted);
+  font-size: 1.08rem;
+  line-height: 1.55;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #6fb6a5, #3f8f7c);
+  color: #041411;
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.hero-visual {
+  position: relative;
+  min-height: min(58vh, 520px);
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, rgba(10, 40, 36, 0.2), rgba(4, 14, 12, 0.55)),
+    radial-gradient(ellipse at 50% 120%, #163d36 0%, #071816 62%);
+}
+
+.aurora {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 70%;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(95, 190, 160, 0.45), transparent 55%),
+    radial-gradient(ellipse at 70% 40%, rgba(72, 140, 170, 0.35), transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(40, 120, 100, 0.4), transparent 60%);
+  filter: blur(18px);
+  animation: drift 10s ease-in-out infinite alternate;
+}
+
+.horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232, 244, 240, 0.35), transparent);
+}
+
+.ridge {
+  position: absolute;
+  left: -8%;
+  right: -8%;
+  bottom: 0;
+  height: 38%;
+  background: linear-gradient(180deg, #0f2d28, #071512);
+  clip-path: polygon(0 55%, 18% 30%, 34% 48%, 52% 18%, 70% 42%, 86% 24%, 100% 40%, 100% 100%, 0 100%);
+}
+
+.ridge-b {
+  height: 28%;
+  opacity: 0.85;
+  background: linear-gradient(180deg, #18443c, #081816);
+  clip-path: polygon(0 70%, 22% 40%, 40% 58%, 58% 28%, 78% 52%, 100% 34%, 100% 100%, 0 100%);
+  animation: rise 7s ease-in-out infinite alternate;
+}
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #eef9f5;
+  box-shadow: 0 0 12px rgba(238, 249, 245, 0.8);
+  animation: twinkle 3.4s ease-in-out infinite;
+}
+
+.star-a { top: 18%; left: 22%; }
+.star-b { top: 28%; left: 68%; animation-delay: 0.8s; }
+.star-c { top: 14%; left: 84%; width: 3px; height: 3px; animation-delay: 1.4s; }
